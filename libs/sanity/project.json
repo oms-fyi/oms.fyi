@@ -1,0 +1,36 @@
+{
+  "name": "sanity",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sanity/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/sanity",
+        "tsConfig": "libs/sanity/tsconfig.lib.json",
+        "packageJson": "libs/sanity/package.json",
+        "main": "libs/sanity/src/index.ts",
+        "assets": [
+          "libs/sanity/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/sanity/**/*.ts",
+          "libs/sanity/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

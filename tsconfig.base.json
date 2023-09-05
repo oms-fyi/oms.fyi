@@ -17,8 +17,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@oms.fyi/sanity": [
+        "libs/sanity/src/index.ts"
+      ]
+    }
   },
+  "include": ["*.ts"],
   "exclude": [
     "node_modules",
     "tmp"
