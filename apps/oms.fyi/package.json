@@ -6,8 +6,13 @@
     "name": "oms.fyi"
   },
   "dependencies": {
+    "@sanity/image-url": "1",
+    "@sanity/vision": "3",
     "next": "~15.2.4",
+    "next-sanity": "9",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "sanity": "3",
+    "styled-components": "6"
   }
 }
