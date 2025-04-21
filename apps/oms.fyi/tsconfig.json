@@ -21,7 +21,7 @@
     },
     "types": ["jest", "node"],
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": ".",
     "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
   },
   "include": [
@@ -31,7 +31,9 @@
     "src/**/*.jsx",
     "../../apps/oms.fyi/.next/types/**/*.ts",
     "../../dist/apps/oms.fyi/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "sanity.config.ts"
   ],
   "exclude": [
     "out-tsc",
