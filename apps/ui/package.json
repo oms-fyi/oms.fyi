@@ -6,7 +6,7 @@
     "node": "22.15.0"
   },
   "nx": {
-    "name": "oms.fyi"
+    "name": "ui"
   },
   "dependencies": {
     "@sanity/icons": "^3.7.0",
