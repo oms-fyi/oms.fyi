@@ -6,7 +6,10 @@ import {
   ColorSchemeScript,
   MantineProvider,
   mantineHtmlProps,
+  Container,
+  Group,
 } from '@mantine/core';
+import { ColorSchemeToggle } from '@/components/ColorSchemeToggle';
 
 export const metadata = {
   title: 'oms.fyi',
@@ -24,7 +27,15 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider>
+          <Container p={48}>
+            <Group justify="space-between">
+              <h1>OMS.fyi</h1>
+              <ColorSchemeToggle />
+            </Group>
+            <main>{children}</main>
+          </Container>
+        </MantineProvider>
       </body>
     </html>
   );
