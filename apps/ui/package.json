@@ -9,6 +9,7 @@
     "name": "ui"
   },
   "dependencies": {
+    "@sanity/client": "^6.29.0",
     "@sanity/icons": "^3.7.0",
     "@sanity/image-url": "1",
     "@sanity/vision": "3",

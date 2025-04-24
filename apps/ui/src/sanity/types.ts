@@ -248,3 +248,35 @@ export type AllSanitySchemaTypes =
   | Syllabus
   | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: src/app/page.tsx
+// Variable: RECENT_REVIEWS_QUERY
+// Query: *[_type == "review"]{..., course->{codes}}|order(_createdAt desc)[0...10]
+export type RECENT_REVIEWS_QUERYResult = Array<{
+  _id: string;
+  _type: 'review';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  course: {
+    codes: Array<string> | null;
+  } | null;
+  semester?: {
+    _ref: string;
+    _type: 'reference';
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: 'semester';
+  };
+  body?: string;
+  rating?: number;
+  difficulty?: number;
+  workload?: number;
+  authorId?: string;
+}>;
+
+// Query TypeMap
+import '@sanity/client';
+declare module '@sanity/client' {
+  interface SanityQueries {
+    '*[_type == "review"]{..., course->{codes}}|order(_createdAt desc)[0...10]': RECENT_REVIEWS_QUERYResult;
+  }
+}
