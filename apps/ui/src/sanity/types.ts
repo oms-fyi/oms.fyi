@@ -273,10 +273,39 @@ export type RECENT_REVIEWS_QUERYResult = Array<{
   authorId?: string;
 }>;
 
+// Source: src/app/reviews/[id]/page.tsx
+// Variable: REVIEW_BY_ID_QUERY
+// Query: *[_type == "review" && _id == $id]{..., course->{name}, semester->}[0]
+export type REVIEW_BY_ID_QUERYResult = {
+  _id: string;
+  _type: 'review';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  course: {
+    name: string | null;
+  } | null;
+  semester: {
+    _id: string;
+    _type: 'semester';
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    term?: 'fall' | 'spring' | 'summer';
+    startDate?: string;
+  } | null;
+  body?: string;
+  rating?: number;
+  difficulty?: number;
+  workload?: number;
+  authorId?: string;
+} | null;
+
 // Query TypeMap
 import '@sanity/client';
 declare module '@sanity/client' {
   interface SanityQueries {
     '*[_type == "review"]{..., course->{codes}}|order(_createdAt desc)[0...10]': RECENT_REVIEWS_QUERYResult;
+    '*[_type == "review" && _id == $id]{..., course->{name}, semester->}[0]': REVIEW_BY_ID_QUERYResult;
   }
 }

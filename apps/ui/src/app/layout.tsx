@@ -28,7 +28,7 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider>
-          <Container size="xl">
+          <Container>
             <Group justify="space-between">
               <h1>OMS.fyi</h1>
               <ColorSchemeToggle />

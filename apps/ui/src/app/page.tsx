@@ -1,8 +1,8 @@
 import { sanityFetch } from '@/sanity/lib/live';
 import { Card, Group, Text, Stack, Button, ScrollArea } from '@mantine/core';
-import { IconClock, IconPlus } from '@tabler/icons-react';
+import { IconPlus } from '@tabler/icons-react';
 import { defineQuery } from 'next-sanity';
-import { RelativeTime } from '@/components/Data/RelativeTime';
+import { RelativeTime } from '@/components/Format/RelativeTime';
 
 const RECENT_REVIEWS_QUERY = defineQuery(
   `*[_type == "review"]{..., course->{codes}}|order(_createdAt desc)[0...10]`
